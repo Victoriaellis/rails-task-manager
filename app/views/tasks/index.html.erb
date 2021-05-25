@@ -2,7 +2,10 @@
 
 <% @tasks.each do |task| %>
   <p>Task: <%= link_to task.title, task_path(task) %></p>
+  <p><%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'are you sure?'} %></p>
 <% end %>
+
+<i class="fa fa-check-square-o" aria-hidden="true"></i>
 
 <%= link_to "Add a new task", new_task_path %>
 
